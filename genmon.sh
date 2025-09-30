@@ -22,8 +22,8 @@ DATE=${DATE}$TIME
 #echo $TIME
 #echo $MINUTE
 
-# Use curl to fetch the current price from porssisahko.net but only on the first
-# minute of the hour. Write to file. Any other minute, fetch file.
+# Use curl to fetch the current price from porssisahko.net but only at quarter
+# bells. Write to file. Any other times, fetch file.
 if [[ $MINUTE == 00 || $MINUTE == 15 || $MINUTE == 30 || $MINUTE == 45 ]];
 then
     PRICE="$(curl -s https://api.porssisahko.net/v2/price.json\?date\=$DATE)"
